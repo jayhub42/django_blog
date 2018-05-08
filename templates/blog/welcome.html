@@ -1,5 +1,9 @@
 {% extends 'sys_base.html' %}
 {% block title %}Welcom{% endblock %}
 {% block content0 %}
-    <h1 id="blog text">this will be the blog text</h1>
+    <h1 id="welcome_msg">Welcome to MEH</h1>
+    {% for each in article %}
+    <br><br><h1 id="blog text">{{ each }}</h1><br>
+        <p id="blog text">{{ each.body_str }}</p>
+    {% endfor %}
 {% endblock %}

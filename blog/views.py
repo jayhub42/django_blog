@@ -1,7 +1,9 @@
 from django.shortcuts import render
-
+from .models import Article
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'blog/welcome.html')  # return HttpResponse("index Hello, this is how monte works.")
+    latest_article = Article.objects.filter(published_bool=True).order_by('-published_on_date')
+    context = {'article': latest_article}
+    return render(request, 'blog/welcome.html', context)
