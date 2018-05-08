@@ -16,5 +16,5 @@ class Article(models.Model):
     def was_published_recently(self):
         return self.published_on_date >= timezone.now() - datetime.timedelta(days=1)
 
-    # def __str__(self):
-    #     return self.title
+    def __str__(self):
+        return self.title
