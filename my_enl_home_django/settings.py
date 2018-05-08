@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # ... include the providers you want to enable:
     'allauth.socialaccount.providers.google',
     'people',
+    'blog',
 ]
 
 SOCIALACCOUNT_PROVIDERS = {
