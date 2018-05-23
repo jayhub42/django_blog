@@ -12,6 +12,9 @@ def index(request):
 
 
 def article(request, article_id):
-    article = get_object_or_404(Article, pk=article_id)
-    return render(request, 'blog/article.html', {'article': article})
+    article_rec = get_object_or_404(Article, pk=article_id)
+    # article_rec = Article.objects.all()
+    comment_form = CommentForm(initial={'body_str': "hello",'blog':article_id})
+    print("article", article_rec)
+    return render(request, 'blog/article.html', {'article': article_rec, "comment_form": comment_form})
 
