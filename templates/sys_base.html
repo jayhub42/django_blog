@@ -8,8 +8,9 @@
 {% block content_Head %}{% endblock %}
 </head>
 <body>
+{% load static %}
 <h1 id="user">{{ user.username }}</h1>
-
+<img src="{% static "images/gb2.png" %}" alt="My image"/>
  {% if messages %}
     <div>
       <strong>Messages:</strong>
