@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'people',
     'blog',
+    'comments',
 ]
 
 SOCIALACCOUNT_PROVIDERS = {
