@@ -6,12 +6,19 @@
     <br><br><br>
         <p id="blog text">{{ article.body_str }}</p>
     {% endif %}
+    {% if comments %}
+        {% for each in comments %}
+            <p id="blog text">{{ each.author }}</p>
+        <p id="blog text">{{ each.body_str }}</p>
+        {% endfor %}
+    {% endif %}
     {% if comment_form %}
 
-        <form action="/comments/" method="post">
+        <form action="/comments/{{ article.id }}/" method="post">
     {% csrf_token %}
     {{ comment_form }}
     <input type="submit" value="Submit" />
 </form>
     {% endif %}
+
 {% endblock %}

@@ -13,5 +13,5 @@ class Comment(models.Model):
     author = models.ForeignKey(User, on_delete='PROTECTED')
 
     def __str__(self):
-        return self.author
+        return self.author.username
 
