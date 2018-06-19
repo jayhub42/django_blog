@@ -12,6 +12,7 @@ def index(request):
     context = {'article': latest_article,'comment_form': comment_form}
     return render(request, 'blog/welcome.html', context)
 
+
 @login_required
 def article(request, article_id):
     article_rec = get_object_or_404(Article, pk=article_id)
