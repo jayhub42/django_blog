@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from blog.models import Article
 from .forms import CommentForm
 
+
 @login_required
 def index(request, article_id):
     # latest_article = Article.objects.filter(published_bool=True).order_by('-published_on_date')

@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     comment_form = CommentForm()
     latest_article = Article.objects.filter(published_bool=True).order_by('-published_on_date')
-    context = {'article': latest_article,'comment_form': comment_form}
+    context = {'article': latest_article, 'comment_form': comment_form}
     return render(request, 'blog/welcome.html', context)
 
 

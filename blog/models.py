@@ -11,7 +11,10 @@ class Article(models.Model):
     created_on_datetime = models.DateTimeField('Created at', auto_now_add=True, editable=False)
     published_on_date = models.DateTimeField('Published at', null=True, blank=True)
     published_bool = models.BooleanField("Published", default=False)
+    # photo_url = models.URLField("main image url")
+    photo_url = models.CharField("main image url", max_length=255)
     author = models.ForeignKey(User, limit_choices_to={'is_staff': True}, on_delete='PROTECTED')
+    lead_char = models.CharField("lead", max_length=255)
 
     def was_published_recently(self):
         return self.published_on_date >= timezone.now() - datetime.timedelta(days=1)
